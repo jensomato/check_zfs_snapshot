@@ -256,7 +256,7 @@ _snapshot_count() {
 	# cat $HOME/debug | wc -l
 	#        7
 	local COUNT
-	COUNT="$(zfs list -t snapshot | grep "$1" | wc -l)"
+	COUNT="$(zfs list -H -r -t snapshot "$1" | wc -l)"
 	echo $COUNT
 }
 
